@@ -1,5 +1,7 @@
 """Functions to manage a users shopping cart items."""
 
+from collections import OrderedDict
+
 
 def add_item(current_cart, items_to_add):
     """Add items to shopping cart.
@@ -66,8 +68,23 @@ def send_to_store(cart, aisle_mapping):
     :return: dict - fulfillment dictionary ready to send to store.
 
     """
+    nuevo_diccionario = {}
+    for item, value in cart.items():
+        if item in aisle_mapping:
+            nuevo_diccionario[item] = [
+                value,
+                aisle_mapping[item][0],
+                aisle_mapping[item][1],
+            ]
+        else:
+            nuevo_diccionario[item] = [
+                value,
+                None,
+                None,
+            ]
+    nuevo1 = OrderedDict(reversed(sorted(nuevo_diccionario.items())))
 
-    pass
+    return nuevo1
 
 
 def update_store_inventory(fulfillment_cart, store_inventory):

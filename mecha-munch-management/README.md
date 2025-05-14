@@ -20,7 +20,7 @@ For a similarly "safe" (_without KeyError_) insertion operation, there is the `.
 If the key is **not** found, it will _insert_ the (`key`, `default value`) pair and return the `default value` for use.
 
 ```python
->>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
+- [ ] >>> palette_I = {'Grassy Green': '#9bc400', 'Purple Mountains Majesty': '#8076a3', 'Misty Mountain Pink': '#f9c5bd'}
 
 # Looking for the value associated with key "Rock Brown".
 # The key does not exist, so it is added with the default value, and the value is returned.
