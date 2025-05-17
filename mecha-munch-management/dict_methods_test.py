@@ -63,7 +63,6 @@ class MechaMunchManagementTest(unittest.TestCase):
                     f"The function returned {actual_result}, but the tests "
                     f"expected: {expected} once the recipes were updated."
                 )
-
                 self.assertEqual(actual_result, expected, msg=error_msg)
 
     @pytest.mark.task(taskno=4)

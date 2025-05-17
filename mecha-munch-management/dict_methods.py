@@ -41,12 +41,7 @@ def update_recipes(ideas, recipe_updates):
     :param recipe_updates: dict - dictionary with updates for the ideas section.
     :return: dict - updated "recipe ideas" dict.
     """
-
-    for category, recipes in recipe_updates:
-        if category in ideas:
-            ideas[category].update(recipes)
-        else:
-            ideas[category] = recipes
+    ideas.update(recipe_updates)
     return ideas
 
 
@@ -94,5 +89,11 @@ def update_store_inventory(fulfillment_cart, store_inventory):
     :param store_inventory: dict - store available inventory
     :return: dict - store_inventory updated.
     """
-
-    pass
+    for index, value in fulfillment_cart.items():
+        if index in store_inventory:
+            nuevo_valor = store_inventory[index][0] - value[0]
+            if nuevo_valor > 0:
+                store_inventory[index][0] = nuevo_valor
+            else:
+                store_inventory[index][0] = "Out of Stock"
+    return store_inventory
