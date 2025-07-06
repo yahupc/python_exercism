@@ -11,10 +11,9 @@ Unpacked values can then be assigned to variables within the same statement, whi
 
 The special operators `*` and `**` are often used in unpacking contexts and with multiple assignment.
 
-~~~~exercism/caution
+```exercism/caution
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`. While `*` and `**` are used for multiplication and exponentiation respectively, `*<variable_name>` and `**<variable_name>` are used as packing and unpacking operators.
-~~~~
-
+```
 
 ## Multiple assignment
 
@@ -62,12 +61,11 @@ For example:
 
 Since `tuples` are immutable, you can't swap elements in a `tuple`.
 
-
 ## Unpacking
 
-~~~~exercism/note
+```exercism/note
 The examples below use `lists` but the same concepts apply to `tuples`.
-~~~~
+```
 
 In Python, it is possible to [unpack the elements of `list`/`tuple`/`dictionary`][unpacking] into distinct variables.
 Since values appear within `lists`/`tuples` in a specific order, they are unpacked into variables in the same order:
@@ -87,7 +85,6 @@ If there are values that are not needed then you can use `_` to flag them:
 >>> z
 "cherry"
 ```
-
 
 ### Deep unpacking
 
@@ -228,7 +225,6 @@ This will pack all the values into a `list`/`tuple`.
 
 For more background on using `*` on the left-hand side, see [PEP 3132][pep-3132].
 
-
 ### Packing a dictionary with `**`
 
 Packing a dictionary is done by using the `**` operator.
@@ -306,13 +302,13 @@ c = 3
 You can also write parameters before `*args` to allow for specific positional arguments.
 Individual keyword arguments then have to appear before `**kwargs`.
 
-~~~~exercism/caution
+```exercism/caution
 [Arguments have to be structured](https://www.python-engineer.com/courses/advancedpython/18-function-arguments/) like this:
 
 `def my_function(<positional_args>, *args, <key-word_args>, **kwargs)`
 
 If you don't follow this order then you will get an error.
-~~~~
+```
 
 ```python
 >>> def my_function(a, b, *args):
@@ -382,10 +378,10 @@ Your friend Linus is a Locomotive Engineer who drives cargo trains between citie
 Although they are amazing at handling trains, they are not amazing at handling logistics or computers.
 They would like to enlist your programming help organizing train details and correcting mistakes in route data.
 
-~~~~exercism/note
+```exercism/note
 This exercise could easily be solved using slicing, indexing, and various `dict` methods.
 However, we would like you to practice packing, unpacking, and multiple assignment in solving each of the tasks below.
-~~~~
+```
 
 ## 1. Create a list of all wagons
 
@@ -453,9 +449,9 @@ The first `dict` contains the origin and destination cities the train route runs
 The second `dict` contains other routing details such as train speed, length, or temperature.
 The function should return a consolidated `dict` with all routing information.
 
-~~~~exercism/note
+```exercism/note
 The second `dict` can contain different/more properties than the ones shown in the example.
-~~~~
+```
 
 ```python
 >>> extend_route_information({"from": "Berlin", "to": "Hamburg"}, {"length": "100", "speed": "50"})
@@ -502,3 +498,4 @@ Your function should return a `list` with the three "row" `lists` reordered to h
 ### Contributed to by
 
 - @IsaacG
+
