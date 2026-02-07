@@ -26,7 +26,6 @@ VEGAN = {
          'silken tofu', 'pomegranate molasses', 'carrot', 'corn flour', 'mashed potatoes'
         }
 
-
 VEGETARIAN = {
               'almonds', 'chives', 'limes', 'puff pastry', 'onion', 'cashews', 'red cabbage', 'red wine vinegar',
               'brussel sprouts', 'fresh corn', 'black pepper', 'lemon juice', 'roasted corn', 'eggs',
