@@ -7,13 +7,8 @@ from sets_categories_data import (VEGAN,
                                   PALEO,
                                   OMNIVORE,
                                   ALCOHOLS,
-                                  SPECIAL_INGREDIENTS,
-                                  VEGAN_INTERSECTIONS,
-                                  VEGETARIAN_INTERSECTIONS,
-                                  KETO_INTERSECTIONS,
-                                  PALEO_INTERSECTIONS,
-                                  OMNIVORE_INTERSECTIONS)
-
+                                  SPECIAL_INGREDIENTS
+)
 
 
 def clean_ingredients(dish_name, dish_ingredients):
