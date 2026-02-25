@@ -51,10 +51,11 @@ def categorize_dish(dish_name, dish_ingredients):
     """
     categories = [("VEGAN", VEGAN), ("VEGETARIAN", VEGETARIAN), ("PALEO", PALEO),
                   ("KETO", KETO), ("OMNIVORE", OMNIVORE)]
+    result = ""
     for label, category in categories:
         if dish_ingredients.issubset(category):
-            return f"{dish_name}: {label}"
-
+            result =  f"{dish_name}: {label}"
+    return result
 
 def tag_special_ingredients(dish):
     """Compare `dish` ingredients to `SPECIAL_INGREDIENTS`.
@@ -67,10 +68,11 @@ def tag_special_ingredients(dish):
     SPECIAL_INGREDIENTS constant imported from `sets_categories_data.py`.
     """
     dn, dsi = dish
+    result = ()
     interception = set(dsi).intersection(SPECIAL_INGREDIENTS)
     if interception:
-        return (dn, interception)
-
+        result =  (dn, interception)
+    return result
 
 def compile_ingredients(dishes):
     """Create a master list of ingredients.
@@ -121,5 +123,3 @@ def singleton_ingredients(dishes, intersection):
         singletons.update(set(dish).difference(intersection))
     
     return singletons 
-
-
