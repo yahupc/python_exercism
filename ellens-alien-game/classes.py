@@ -24,6 +24,7 @@ class Alien:
     def __init__(self, x_coordinate, y_coordinate):
         self.x_coordinate = x_coordinate
         self.y_coordinate = y_coordinate
+        self.health = 3
         type(self).total_aliens_created += 1
 
     def hit(self):
@@ -31,15 +32,15 @@ class Alien:
         return self.health
     
     def is_alive(self):
-        return True if self.health >0 else False
+        return self.health > 0
     
     def teleport(self,x_coordinate, y_coordinate):
         self.x_coordinate = x_coordinate
         self.y_coordinate = y_coordinate
-        return None
     
     def collision_detection(self, coordinates):
         pass
+
 
  
 def new_aliens_collection(coordinates):
@@ -55,4 +56,4 @@ def new_aliens_collection(coordinates):
     list of Alien objects
         New Alien objects positioned at the given coordinates.
     """
-    return [Alien(x, y) for x, y in coordinates]
+    return [Alien(x_coordinate, y_coordinate) for x_coordinate, y_coordinate in coordinates]

@@ -46,3 +46,32 @@ def generate_seats(number):
             if seat_count >= number:
                 return
             yield f"{row}{letter}"
+            seat_count += 1
+        row += 1
+
+
+def assign_seats(passengers):
+    """Assign seats to passengers.
+
+    :param passengers: list[str] - a list of strings containing names of passengers.
+    :return: dict - with the names of the passengers as keys and seat numbers as values.
+
+    Example output: {"Adele": "1A", "Björk": "1B"}
+
+    """
+    numbers_passengers = len(passengers)
+    seats = list(generate_seats(numbers_passengers))
+    return dict(zip(passengers, seats))
+
+
+def generate_codes(seat_numbers, flight_id):
+    """Generate codes for a ticket.
+
+    :param seat_numbers: list[str] - list of seat numbers.
+    :param flight_id: str - string containing the flight identifier.
+    :return: generator - generator that yields 12 character long ticket codes.
+
+    """
+    for seat_number in seat_numbers:
+        palabra = seat_number + flight_id
+        yield palabra + (12 - len(palabra)) * "0"
